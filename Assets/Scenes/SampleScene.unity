@@ -593,7 +593,7 @@ MonoBehaviour:
   - {fileID: 3603574847652615356, guid: a8c86403388781849b30d65604bc720d, type: 3}
   - {fileID: 7170419999608900744, guid: 0a48e12e3f85b094e95c749e98792b47, type: 3}
   itemStackPoint: {fileID: 720138194}
-  maxFanItems: 5
+  maxItemsOut: 5
   flyDuration: 0.4
   fanSpread: 500
   fanMaxAngle: 30
