@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ItemStack : MonoBehaviour, IItemSpawner
 {
-    public bool IsFull => stackedItems.Count >= maxFanItems;
+    public bool IsFull => stackedItems.Count >= maxItemsOut;
 
     [SerializeField] private AnimationCurve flyCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f); // для удобства можно настроить кривую полёта
     [SerializeField] private GameObject[] itemsForSpawn;
     [SerializeField] private Transform itemStackPoint;
-    [SerializeField] private int maxFanItems; // это максимум предметов вне инвентаря
+    [SerializeField] private int maxItemsOut; // это максимум предметов вне инвентаря
     [SerializeField] private float flyDuration;
     [SerializeField] private float fanSpread;
     [SerializeField] private float fanMaxAngle;
@@ -20,7 +20,7 @@ public class ItemStack : MonoBehaviour, IItemSpawner
 
     private bool CanSpawn()
     {
-        if (stackedItems.Count >= maxFanItems)
+        if (stackedItems.Count >= maxItemsOut)
         {
             Debug.Log("Максимум предметов");
             return false;
@@ -72,7 +72,7 @@ public class ItemStack : MonoBehaviour, IItemSpawner
         if (stackedItems.Contains(item))
             return;
 
-        if (stackedItems.Count >= maxFanItems)
+        if (stackedItems.Count >= maxItemsOut)
             return;
 
         stackedItems.Add(item);
